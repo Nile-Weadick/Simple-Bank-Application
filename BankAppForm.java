@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  */
 public class BankAppForm extends javax.swing.JFrame{
     
-       ArrayList<Account> accounts = Utility.readFile("C:\\Users\\NileW\\Documents\\NetBeansProjects\\BankApplication\\test\\accounts.txt"); // populating array list using utility class function
+       ArrayList<Account> accounts = Utility.readFile("accounts.txt"); // populating array list using utility class function
        Account currentAccount;
        
     private void createAccounts(){
@@ -248,7 +248,7 @@ public class BankAppForm extends javax.swing.JFrame{
         }
         currentAccount.deposit(amount); // call deposoti calcualtion function and add amount to balance
         balanceTxtBox.setText(String.valueOf(currentAccount.getAccountBalance())); // use value of function to convert double string
-        Utility.writeFile(accounts, "C:\\Users\\NileW\\Documents\\NetBeansProjects\\BankApplication\\test\\accounts.txt"); // save changes to file and array list
+        Utility.writeFile(accounts, "accounts.txt"); // save changes to file and array list
     }//GEN-LAST:event_depositBtnActionPerformed
 
     private void withdrawBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withdrawBtnActionPerformed
@@ -268,7 +268,7 @@ public class BankAppForm extends javax.swing.JFrame{
         
         currentAccount.withdraw(withdrawAmount); // call withdraw calcualtion function and add amount to balance
         balanceTxtBox.setText(String.valueOf(currentAccount.getAccountBalance())); // use value of function to convert double string
-        Utility.writeFile(accounts, "C:\\Users\\NileW\\Documents\\NetBeansProjects\\BankApplication\\test\\accounts.txt"); // save changes to file and array list
+        Utility.writeFile(accounts, "accounts.txt"); // save changes to file and array list
     }//GEN-LAST:event_withdrawBtnActionPerformed
 
     private void transferBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transferBtnActionPerformed
@@ -298,7 +298,7 @@ public class BankAppForm extends javax.swing.JFrame{
         if(transferAccount != null){
             currentAccount.transfer(transferAccount, withdrawAmount); // call transfer calcualtion function and add amount to balance
             balanceTxtBox.setText(String.valueOf(currentAccount.getAccountBalance())); // use value of function to convert double string
-            Utility.writeFile(accounts, "C:\\Users\\NileW\\Documents\\NetBeansProjects\\BankApplication\\test\\accounts.txt"); // save changes to file and array list
+            Utility.writeFile(accounts, "accounts.txt"); // save changes to file and array list
         }
         else{
             JOptionPane.showMessageDialog(this,"ACCOUNT NUMBER NOT FOUND");
